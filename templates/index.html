@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather Station</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/5.2.2/mqtt.min.js"
+        integrity="sha512-I8gBERqrEkyDqbjHj3aymzBVIPFs85vGSzy26+1P5weHzFp8vfJ8dARJz51n3oQ80DTdYn8MbhUiz5UAW2rMxw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="bg-light">
+    <div class="container mt-5 mb-5">
+        <div class="card p-4" style="background-color: #f2f2f2; border-radius: 15px">
+            <h1 class="mb-4">Weather Station</h1>
+            <p class="mb-4"><strong>From NodeMCU</strong></p>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card mb-3" style="background-color: #ffffff; border-radius: 10px">
+                        <div class="card-body">
+                            <h6 class="card-title" style="color: #f11d1d">
+                                <strong>Temperature</strong>
+                            </h6>
+                            <p class="card-text" id="lastTemp"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card mb-3" style="background-color: #ffffff; border-radius: 10px">
+                        <div class="card-body">
+                            <h6 class="card-title" style="color: #4635dc">
+                                <strong>Humidity</strong>
+                            </h6>
+                            <p class="card-text" id="lastHum"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card mb-3" style="background-color: #ffffff; border-radius: 15px">
+                        <div class="card-body">
+                            <canvas id="myChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3" style="background-color: #ffffff; border-radius: 15px">
+                        <div class="card-body">
+                            <canvas id="myChart2" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3" style="background-color: #ffffff; border-radius: 15px">
+                        <div class="card-body">
+                            <canvas id="myChart3" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="background-color: #ffffff; border-radius: 15px">
+                        <div class="card-body" style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                ">
+                            <img id="myImage" src="https://www.w3schools.com/js/pic_bulboff.gif" width="110"
+                                height="205" />
+                            <p id="statusText" style="display: inline; margin: 10px 0; color: #000000">
+                                <strong>Status: OFF</strong>
+                            </p>
+                            <div style="display: flex">
+                                <button class="btn btn-success" id="btnOn" onclick="light(1)">
+                                    Turn On
+                                </button>
+                                <button class="btn btn-danger" id="btnOff" onclick="light(0)" style="margin-left: 10px">
+                                    Turn Off
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
+    <script>
+        function light(sw) {
+            var pic;
+            var statusText;
+            var statusColor;
+
+            if (sw == 0) {
+                pic = "https://www.w3schools.com/js/pic_bulboff.gif";
+                statusText = "OFF";
+                statusColor = "#f11d1d"; // Red color
+            } else {
+                pic = "https://www.w3schools.com/js/pic_bulbon.gif";
+                statusText = "ON";
+                statusColor = "#28a745"; // Green color
+            }
+
+            document.getElementById("myImage").src = pic;
+            document.getElementById("statusText").innerHTML =
+                '<strong>Status: <span style="color: ' +
+                statusColor +
+                ';">' +
+                statusText +
+                "</span></strong>";
+        }
+
+        let get_json = () => {
+            let url = "http://192.168.43.248:5000/thingspeak";
+            fetch(url)
+                .then((response) => response.json())
+                .then((json) => {
+                    console.log(json);
+                    console.log(json.channel);
+                    console.log(json.channel.field1);
+                });
+        };
+
+        let get_last = (myChart, xlabel, isTemperature) => {
+            let url = "http://192.168.43.248:5000/nodemcu/last";
+            fetch(url)
+                .then((response) => response.json())
+                .then((json) => {
+                    let id = json[0].id;
+                    let message = json[0].message;
+                    let sensor = $.parseJSON(message);
+
+                    if (isTemperature) {
+                        $("#lastHum").text(sensor.humidity.toFixed(2));
+                        $("#lastTemp").text(sensor.temperature.toFixed(2));
+                        updateChartData(myChart, xlabel, id, sensor.temperature);
+                    } else {
+                        $("#lastHum").text(sensor.humidity.toFixed(2));
+                        $("#lastTemp").text(sensor.temperature.toFixed(2));
+                        updateChartData(myChart, xlabel, id, sensor.humidity);
+                    }
+                });
+        };
+
+        let updateChartData = (myChart, xlabel, id, newData) => {
+            myChart.data.labels.push(id);
+            myChart.data.datasets[0].data.push(newData);
+
+            if (myChart.data.labels.length > 7) {
+                myChart.data.labels.shift();
+                myChart.data.datasets[0].data.shift();
+            }
+
+            myChart.update();
+        };
+
+        let showChartTemp = () => {
+            var ctx = $("#myChart");
+            var data1 = [];
+            var xlabel = [];
+
+            var myChart = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: xlabel,
+                    datasets: [
+                        {
+                            label: "Temperature",
+                            data: data1,
+                            borderColor: "#f11d1d",
+                            backgroundColor: "rgba(241, 29, 29, 0.1)",
+                        },
+                    ],
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: "Temperature",
+                            },
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: "ID",
+                            },
+                        },
+                    },
+                },
+            });
+
+            get_last(myChart, xlabel, true);
+
+            setInterval(() => get_last(myChart, xlabel, true), 5000);
+        };
+
+        let showChartHum = () => {
+            var ctx = $("#myChart2");
+            var data2 = [];
+            var xlabel2 = [];
+
+            var myChart2 = new Chart(ctx, {
+                type: "line",
+                data: {
+                    labels: xlabel2,
+                    datasets: [
+                        {
+                            label: "Humidity",
+                            data: data2,
+                            borderColor: "#4635dc",
+                            backgroundColor: "rgba(70, 53, 220, 0.1)",
+                        },
+                    ],
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: "Humidity",
+                            },
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: "ID",
+                            },
+                        },
+                    },
+                },
+            });
+
+            get_last(myChart2, xlabel2, false);
+
+            setInterval(() => get_last(myChart2, xlabel2, false), 5000);
+        };
+
+        let myChart;
+
+        let showChartv2 = (ctx, data) => {
+            if (!myChart) {
+                myChart = new Chart(ctx, {
+                    type: "line",
+                    data: {
+                        labels: data.xlabel,
+                        datasets: [
+                            {
+                                label: data.label,
+                                data: data.data,
+                                borderColor: "#4caf50",
+                                backgroundColor: "rgba(76, 175, 80, 0.1)",
+                            },
+                        ],
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: "AVG Wind Direction",
+                                },
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: "Time Stamp",
+                                },
+                            },
+                        },
+                    },
+                });
+            } else {
+                myChart.data.labels = data.xlabel;
+                myChart.data.datasets[0].data = data.data;
+                myChart.update();
+            }
+        };
+
+        let showThingspeak = () => {
+            const fetchData = () => {
+                let url = "http://192.168.43.248:5000/thingspeak";
+                fetch(url)
+                    .then((response) => response.json())
+                    .then((json) => {
+                        console.log(json);
+
+                        console.log(json.channel.field1);
+
+                        let plot_data = Object();
+                        let xlabel = [];
+                        let data1 = [];
+
+                        json.feeds.forEach((feed) => {
+                            let timeString = new Date(feed.created_at).toLocaleTimeString(
+                                [],
+                                {
+                                    hour12: false,
+                                }
+                            );
+                            xlabel.push(timeString);
+                            data1.push(feed.field1);
+                        });
+
+                        xlabel = xlabel.slice(-7);
+                        data1 = data1.slice(-7);
+
+                        plot_data.xlabel = xlabel;
+                        plot_data.data = data1;
+
+                        plot_data.label = json.channel.field1;
+
+                        showChartv2($("#myChart3"), plot_data);
+                    });
+            };
+
+            fetchData();
+
+            setInterval(fetchData, 10000);
+        };
+
+        // let mqtt_publish = (topic, message) => {
+        //     const client = mqtt.connect("ws://192.168.43.248:1883");
+
+        //     client.on("connect", function () {
+        //         console.log("Connected to MQTT broker");
+        //         client.publish(topic, message);
+        //         console.log("Message published");
+        //         client.end;
+        //     });
+        //     client.on("error", function (error) {
+        //         console.log("Error: " + error);
+        //     });
+        // };
+
+        $(() => {
+            $("#btnOn").click(() => {
+                $.get("/nodemcu/led/on", function (data) {
+                    console.log("LED turned on");
+                });
+            });
+            $("#btnOff").click(() => {
+                $.get("/nodemcu/led/off", function (data) {
+                    console.log("LED turned off");
+                });
+            });
+
+            get_json();
+            showChartTemp();
+            showChartHum();
+
+            showThingspeak();
+        });
+    </script>
+</body>
+
+</html>

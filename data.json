@@ -1,0 +1,596 @@
+{
+  "sensors": [
+    {
+      "message": "{\"humidity\":55.000000, \"temperature\":23.700001}",
+      "id": 1
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.200001}",
+      "id": 2
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.100000}",
+      "id": 3
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.100000}",
+      "id": 4
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.200001}",
+      "id": 5
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.200001}",
+      "id": 6
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.200001}",
+      "id": 7
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.200001}",
+      "id": 8
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.200001}",
+      "id": 9
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.200001}",
+      "id": 10
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.700001}",
+      "id": 11
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.700001}",
+      "id": 12
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.600000}",
+      "id": 13
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.600000}",
+      "id": 14
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.500000}",
+      "id": 15
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.500000}",
+      "id": 16
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.400000}",
+      "id": 17
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.400000}",
+      "id": 18
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.400000}",
+      "id": 19
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.299999}",
+      "id": 20
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.299999}",
+      "id": 21
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.299999}",
+      "id": 22
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.299999}",
+      "id": 23
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.200001}",
+      "id": 24
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.200001}",
+      "id": 25
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.400000}",
+      "id": 26
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.500000}",
+      "id": 27
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.600000}",
+      "id": 28
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.200001}",
+      "id": 29
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.700001}",
+      "id": 30
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.900000}",
+      "id": 31
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.900000}",
+      "id": 32
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.900000}",
+      "id": 33
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.000000}",
+      "id": 34
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.299999}",
+      "id": 35
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.700001}",
+      "id": 36
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.900000}",
+      "id": 37
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.200001}",
+      "id": 38
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.200001}",
+      "id": 39
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.000000}",
+      "id": 40
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.600000}",
+      "id": 41
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.900000}",
+      "id": 42
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":32.099998}",
+      "id": 43
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":32.099998}",
+      "id": 44
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":32.000000}",
+      "id": 45
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.900000}",
+      "id": 46
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.700001}",
+      "id": 47
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.600000}",
+      "id": 48
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.400000}",
+      "id": 49
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.299999}",
+      "id": 50
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.299999}",
+      "id": 51
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.200001}",
+      "id": 52
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":31.100000}",
+      "id": 53
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.900000}",
+      "id": 54
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.900000}",
+      "id": 55
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.700001}",
+      "id": 56
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.700001}",
+      "id": 57
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.600000}",
+      "id": 58
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.400000}",
+      "id": 59
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.400000}",
+      "id": 60
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.299999}",
+      "id": 61
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.200001}",
+      "id": 62
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.100000}",
+      "id": 63
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":30.000000}",
+      "id": 64
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.900000}",
+      "id": 65
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.900000}",
+      "id": 66
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.799999}",
+      "id": 67
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.799999}",
+      "id": 68
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.700001}",
+      "id": 69
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.700001}",
+      "id": 70
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.600000}",
+      "id": 71
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.500000}",
+      "id": 72
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.500000}",
+      "id": 73
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.400000}",
+      "id": 74
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.400000}",
+      "id": 75
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.400000}",
+      "id": 76
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.299999}",
+      "id": 77
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.299999}",
+      "id": 78
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.200001}",
+      "id": 79
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.200001}",
+      "id": 80
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.200001}",
+      "id": 81
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.100000}",
+      "id": 82
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.000000}",
+      "id": 83
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.000000}",
+      "id": 84
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":29.000000}",
+      "id": 85
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.900000}",
+      "id": 86
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.900000}",
+      "id": 87
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.900000}",
+      "id": 88
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.799999}",
+      "id": 89
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.700001}",
+      "id": 90
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.700001}",
+      "id": 91
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.700001}",
+      "id": 92
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.700001}",
+      "id": 93
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.600000}",
+      "id": 94
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.600000}",
+      "id": 95
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.600000}",
+      "id": 96
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.500000}",
+      "id": 97
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.500000}",
+      "id": 98
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.400000}",
+      "id": 99
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.400000}",
+      "id": 100
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.400000}",
+      "id": 101
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.400000}",
+      "id": 102
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.400000}",
+      "id": 103
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.299999}",
+      "id": 104
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.299999}",
+      "id": 105
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.299999}",
+      "id": 106
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.299999}",
+      "id": 107
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.200001}",
+      "id": 108
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.200001}",
+      "id": 109
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.200001}",
+      "id": 110
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.200001}",
+      "id": 111
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.200001}",
+      "id": 112
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.000000}",
+      "id": 113
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.000000}",
+      "id": 114
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.000000}",
+      "id": 115
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.000000}",
+      "id": 116
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.000000}",
+      "id": 117
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":28.000000}",
+      "id": 118
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.900000}",
+      "id": 119
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.900000}",
+      "id": 120
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.900000}",
+      "id": 121
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.900000}",
+      "id": 122
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.900000}",
+      "id": 123
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.900000}",
+      "id": 124
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.900000}",
+      "id": 125
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.799999}",
+      "id": 126
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.799999}",
+      "id": 127
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.799999}",
+      "id": 128
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.799999}",
+      "id": 129
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.799999}",
+      "id": 130
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.799999}",
+      "id": 131
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.799999}",
+      "id": 132
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.799999}",
+      "id": 133
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.700001}",
+      "id": 134
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.700001}",
+      "id": 135
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.700001}",
+      "id": 136
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.700001}",
+      "id": 137
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.700001}",
+      "id": 138
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.700001}",
+      "id": 139
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.700001}",
+      "id": 140
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.700001}",
+      "id": 141
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.600000}",
+      "id": 142
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.600000}",
+      "id": 143
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.600000}",
+      "id": 144
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.600000}",
+      "id": 145
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.600000}",
+      "id": 146
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.500000}",
+      "id": 147
+    },
+    {
+      "message": "{\"humidity\":95.000000, \"temperature\":27.500000}",
+      "id": 148
+    }
+  ]
+}
