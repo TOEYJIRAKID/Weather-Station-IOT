@@ -66,4 +66,4 @@ Weather Station is an IoT-based system designed to monitor environmental conditi
 
 ## 📽️ **Project Preview** :
 
-![Weather Station]()
+![Weather Station](https://github.com/TOEYJIRAKID/personal_gif_public/blob/main/Weather-Station.gif)
